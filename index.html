@@ -18,6 +18,87 @@
 		<link href="assets/plugins/fontawesome/css/all.css" rel="stylesheet">
 		<!-- Sirv -->
 		 <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+		<style>
+			.portfolio-topline {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 1rem;
+				margin: 1.75rem 0 1.25rem;
+				flex-wrap: wrap;
+			}
+			.portfolio-kicker {
+				font-size: 0.72rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: rgba(255,255,255,0.7);
+			}
+			.portfolio-badges {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.65rem;
+			}
+			.portfolio-badges span {
+				display: inline-flex;
+				align-items: center;
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				border: 1px solid rgba(255,255,255,0.12);
+				background: rgba(18,183,54,0.12);
+				color: #d7f8dd;
+				font-size: 0.72rem;
+				letter-spacing: 0.04em;
+			}
+			.portfolio-card {
+				position: relative;
+				background: rgba(18, 20, 24, 0.92);
+				border: 1px solid rgba(255,255,255,0.08);
+				border-radius: 1.2rem;
+				padding: 0.9rem;
+				transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+				height: 100%;
+			}
+			.portfolio-card:hover {
+				transform: translateY(-6px);
+				border-color: rgba(18,183,54,0.45);
+				box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+			}
+			.portfolio-card .pics {
+				overflow: hidden;
+				border-radius: 0.9rem;
+				margin-bottom: 1rem;
+			}
+			.portfolio-card .pics img {
+				width: 100%;
+				height: 290px;
+				object-fit: cover;
+				border-radius: 0.9rem;
+				transition: transform 0.35s ease;
+			}
+			.portfolio-card:hover .pics img {
+				transform: scale(1.04);
+			}
+			.portfolio-tag {
+				display: inline-block;
+				margin-bottom: 0.75rem;
+				padding: 0.35rem 0.7rem;
+				border-radius: 999px;
+				background: rgba(18,183,54,0.12);
+				border: 1px solid rgba(18,183,54,0.25);
+				color: #baf7c3;
+				font-size: 0.7rem;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+			.portfolio-card h2 {
+				margin-top: 0;
+			}
+			@media (max-width: 767.98px) {
+				.portfolio-card .pics img {
+					height: 210px;
+				}
+			}
+		</style>
 	</head>
 	<body data-preloader="true">
 
@@ -255,12 +336,12 @@
 <div id="portfolio" class="section-box">
   <div class="section-sm bg-dark border-radius-1">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <h1 class="display-3 fw-medium">My <span class="text-gradient">PROJ€CT$</span></h1>
-          <p></p>
-          <!-- Slider Nav -->
-          <div class="mt-4">
+      <div class="row align-items-end">
+        <div class="col-12 col-md-8">
+          <h1 class="display-3 fw-medium mb-0">My <span class="text-gradient">PROJ€CT$</span></h1>
+        </div>
+        <div class="col-12 col-md-4 text-md-end">
+          <div class="mt-4 mt-md-0">
             <div class="swiper-portfolio-prev button-circle cursor-link">
               <i class="bi bi-arrow-left"></i>
               <i class="bi bi-arrow-left"></i>
@@ -270,48 +351,53 @@
               <i class="bi bi-arrow-right"></i>
             </div>
           </div>
-          <!-- end Slider Nav -->
         </div>
-      </div><!-- end row -->
+      </div>
+
+      <div class="portfolio-topline">
+        <div class="portfolio-kicker">Selected work</div>
+        <div class="portfolio-badges">
+          <span>Brand identity</span>
+          <span>Cover art</span>
+          <span>Social visuals</span>
+          <span>Creative direction</span>
+        </div>
+      </div>
 
       <!-- Portfolio Slider -->
       <div class="swiper portfolio-slider mt-4 mt-lg-5">
         <div class="swiper-wrapper">
 
-		<!-- Slider Item 1 -->
-		<div class="swiper-slide">
-		<div class="portfolio-box">
-			<div class="pics">
-			<a href="projects/domquik.html">
-				<img src="assets/images/domquik.png" alt="DOMQUIK project">
-			</a>
-			</div>
-			<div class="pt-4">
-			<h2>
-				<a class="portfolio-caption" href="projects/domquik.html">
-				<i class="bi bi-lightning-charge-fill"></i>
-				DOMQUIK [PERSONAL BRAND]
-				</a>
-			</h2>
-			</div>
-		</div>
-		</div>
-
+          <!-- Slider Item 1 -->
+          <div class="swiper-slide">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Featured</div>
+              <div class="pics">
+                <a href="projects/domquik.html">
+                  <img src="assets/images/domquik.png" alt="DOMQUIK project">
+                </a>
+              </div>
+              <div class="pt-2">
+                <h2>
+                  <a class="portfolio-caption" href="projects/domquik.html">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    DOMQUIK [PERSONAL BRAND]
+                  </a>
+                </h2>
+              </div>
+            </div>
+          </div>
 
           <!-- Slider Item 2 -->
           <div class="swiper-slide">
-            <div class="portfolio-box">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Logo</div>
               <div class="pics">
                 <a href="#">
-                  <img src="assets/images/teez.png" alt="">
+                  <img src="assets/images/teez.png" alt="Teez logo project">
                 </a>
               </div>
-              <div class="pt-4">
-                <ul class="list-inline-dot sm-heading text-white mb-2">
-                  <li>
-                    <a class="link-hover" href="#"><span data-text=""></span></a>
-                  </li>
-                </ul>
+              <div class="pt-2">
                 <h2>
                   <a class="portfolio-caption" href="#">
                     <i class="bi bi-lightning-charge-fill"></i>
@@ -324,13 +410,14 @@
 
           <!-- Slider Item 3 -->
           <div class="swiper-slide">
-            <div class="portfolio-box">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Cover art</div>
               <div class="pics">
                 <a href="#">
-                  <img src="assets/images/amor.png" alt="" width="100" height="auto">
+                  <img src="assets/images/amor.png" alt="Getro & Andyr cover art" width="100" height="auto">
                 </a>
               </div>
-              <div class="pt-4">
+              <div class="pt-2">
                 <h2>
                   <a class="portfolio-caption" href="#">
                     <i class="bi bi-yin-yang"></i>
@@ -343,13 +430,14 @@
 
           <!-- Slider Item 4 -->
           <div class="swiper-slide">
-            <div class="portfolio-box">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Visuals</div>
               <div class="pics">
                 <a href="#">
-                  <img src="assets/images/party.png" alt="" width="100" height="auto">
+                  <img src="assets/images/party.png" alt="Yungkidopony project" width="100" height="auto">
                 </a>
               </div>
-              <div class="pt-4">
+              <div class="pt-2">
                 <h2>
                   <a class="portfolio-caption" href="#">
                     <i class="bi bi-yin-yang"></i>
@@ -362,13 +450,14 @@
 
           <!-- Slider Item 5 -->
           <div class="swiper-slide">
-            <div class="portfolio-box">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Personal</div>
               <div class="pics">
                 <a href="#">
-                  <img src="assets/images/DopestQuik.png" alt="" width="100" height="auto">
+                  <img src="assets/images/DopestQuik.png" alt="Personal cover art" width="100" height="auto">
                 </a>
               </div>
-              <div class="pt-4">
+              <div class="pt-2">
                 <h2>
                   <a class="portfolio-caption" href="#">
                     <i class="bi bi-yin-yang"></i>
@@ -381,13 +470,14 @@
 
           <!-- Slider Item 6 -->
           <div class="swiper-slide">
-            <div class="portfolio-box">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Print</div>
               <div class="pics">
                 <a href="#">
-                  <img src="assets/images/HamyWho.png" alt="" width="100" height="auto">
+                  <img src="assets/images/HamyWho.png" alt="HamyWho print setup" width="100" height="auto">
                 </a>
               </div>
-              <div class="pt-4">
+              <div class="pt-2">
                 <h2>
                   <a class="portfolio-caption" href="#">
                     <i class="bi bi-yin-yang"></i>
@@ -398,25 +488,25 @@
             </div>
           </div>
 
-								<!-- Slider Item 7 -->
-			<div class="swiper-slide">
-				<div class="portfolio-box">
-				<div class="pics">
-					<a href="#">
-					<img src="assets/images/rfid narame web.png" alt="" width="100" height="auto">
-					</a>
-				</div>
-				<div class="pt-4">
-					<h2>
-					<a class="portfolio-caption" href="#">
-						<i class="bi bi-yin-yang"></i>
-						BONITEX [PHOTOS]
-					</a>
-					</h2>
-				</div>
-				</div>
-			</div>
-
+          <!-- Slider Item 7 -->
+          <div class="swiper-slide">
+            <div class="portfolio-box portfolio-card">
+              <div class="portfolio-tag">Photography</div>
+              <div class="pics">
+                <a href="#">
+                  <img src="assets/images/rfid narame web.png" alt="Bonitex photos" width="100" height="auto">
+                </a>
+              </div>
+              <div class="pt-2">
+                <h2>
+                  <a class="portfolio-caption" href="#">
+                    <i class="bi bi-yin-yang"></i>
+                    BONITEX [PHOTOS]
+                  </a>
+                </h2>
+              </div>
+            </div>
+          </div>
 
         </div><!-- end swiper-wrapper -->
       </div><!-- end swiper portfolio-slider -->

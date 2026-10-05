@@ -1696,29 +1696,30 @@ button.mfp-close:hover {
   display: block;
   position: relative;
   overflow: hidden;
-  -webkit-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .portfolio-box .portfolio-caption i {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  display: none !important;
+  position: static;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: linear 0.1s;
-  transition: linear 0.1s;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .portfolio-box:hover .portfolio-caption {
-  padding-left: 44px;
+  padding-left: 0;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .portfolio-box:hover .portfolio-caption i {
-  visibility: visible;
-  opacity: 1;
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .portfolio-slider.swiper, .portfolio-slider.swiper-container {
